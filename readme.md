@@ -4,4 +4,4 @@ This is a demo application that uses [CartoDB](http://cartodb.com/), [Torque](ht
 
 It was built at a [Code for Philly](http://codeforphilly.org/) civic application workshop by [Mark Headd](http://twitter.com/mheadd).
 
-The visualization displays crime incidents categorized as homicides from January 1, 2006 through December 18, 2012 (almost six full years totalling 3,084 homicides).
+The visualization displays crime incidents categorized as homicides from January 1, 2006 through December 18, 2012 (almost seven full years totalling 3,084 homicides).
