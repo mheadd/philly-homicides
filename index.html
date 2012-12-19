@@ -7,6 +7,16 @@
     <link rel="shortcut icon" href="http://cartodb.com/favicon/favicon_32x32.ico" />
     <link href="http://code.google.com/apis/maps/documentation/javascript/examples/default.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="lib/cartodb.css">
+    <style type="text/css">
+      .torque_time {
+        text-align: center;
+        font-size: 1.1em;
+        font-weight: bold;
+        padding: 10px;
+        background-color: black;
+        border: 1px white dashed;
+      }
+    </style>
     <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
     <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
     <script type="text/javascript" src="lib/wax.g.js"></script>
@@ -24,14 +34,14 @@
     function initialize() {
         // initialise the google map
         var map = new google.maps.Map(document.getElementById('map_canvas'), {
-            center: new google.maps.LatLng(39.987642831840844,-75.14717102050781),
+            center: new google.maps.LatLng(39.991851471423466,-75.12725830078125),
             zoom: 12,
             mapTypeId:google.maps.MapTypeId.SATELLITE,
             mapTypeControl:false,
             minZoom:1,
             scrollwheel: false,
             panControl: false,
-            zoomControl: false,
+            zoomControl: true,
             scaleControl: false,
             streetViewControl: false,
             overviewMapControl: false,
@@ -43,7 +53,7 @@
                 stylers:[
                     { invert_lightness:true },
                     { weight:1 },
-                    { saturation:-50 },
+                    { saturation:-20 },
                     { lightness:-10 }
                 ]
             },
@@ -72,13 +82,13 @@
             column: "dispatch_date_time",
             cumulative: true,
             resolution: 2,
-            steps: 285,
+            steps: 325,
             fps: 24,
             fitbounds: false,
             clock: true,
             blendmode: 'source-over',
             trails: true,
-            point_type:'circle',
+            point_type:'square',
             cellsize:2
         }
 
@@ -89,6 +99,17 @@
             Torque.env = env;
         });
 
+        var ribbonBlock = document.getElementById('ribbon');
+        var ribbon = document.createElement('a');
+        ribbon.setAttribute('href', 'https://github.com/mheadd/philly-homicides');
+
+        var link = document.createElement('img');
+        link.setAttribute('style', 'position: absolute; top: 0; right: 0; border: 0;');
+        link.setAttribute('src', 'https://s3.amazonaws.com/github/ribbons/forkme_right_red_aa0000.png');
+
+        ribbon.appendChild(link);
+        ribbonBlock.appendChild(ribbon);
+
     }
     </script>
 </head>
@@ -96,5 +117,6 @@
     <div id="map_canvas"></div>
     <div class="torque_time"></div>
     <a class="cartodb_logo" href="http://www.cartodb.com" target="_blank">CartoDB</a>
+    <div id="ribbon"></div>
 </body>
 </html>
