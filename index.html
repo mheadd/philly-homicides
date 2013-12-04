@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+``<!DOCTYPE html>
 <html>
 <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
@@ -33,7 +33,7 @@
     var gui;
     function initialize() {
         // initialise the google map
-        var map = new google.maps.Map(document.getElementById('map_canvas'), {
+        var map = new google.maps.Map(document.getElementById('map-canvas'), {
             center: new google.maps.LatLng(39.991851471423466,-75.12725830078125),
             zoom: 12,
             mapTypeId:google.maps.MapTypeId.SATELLITE,
@@ -114,7 +114,7 @@
     </script>
 </head>
 <body onload="initialize()">
-    <div id="map_canvas"></div>
+    <div id="map-canvas"></div>
     <div class="torque_time"></div>
     <a class="cartodb_logo" href="http://www.cartodb.com" target="_blank">CartoDB</a>
     <div id="ribbon"></div>
